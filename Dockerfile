@@ -1,9 +1,9 @@
-FROM alpine:edge
+FROM alpine:3.7
 MAINTAINER Nurettin Topal <nurettintopal@gmail.com>
 
 #set timezone => Turkey - Istanbul
 #https://wiki.alpinelinux.org/wiki/Setting_the_timezone
-RUN apk --update add tzdata --repository http://dl-4.alpinelinux.org/alpine/edge/testing
+RUN apk --update add tzdata
 RUN cp /usr/share/zoneinfo/Turkey /etc/localtime
 RUN echo "Turkey" >  /etc/timezone
 RUN apk del tzdata
@@ -21,9 +21,9 @@ RUN apk --update add \
     nano \
     wget \
     gzip \
+    php7-pcntl \
     php7-session \
     php7-gd \
-    php7-mcrypt \
     php7-mbstring \
     php7-json \
     php7-xml \
@@ -41,14 +41,15 @@ RUN apk --update add \
     php7-xmlwriter \
     php7-simplexml \
     php7-ctype \
+    php7-fileinfo \
     zlib \
     php7-zlib \
+    php7-ldap \
     bash \
-    --repository http://nl.alpinelinux.org/alpine/edge/community/
-
-RUN apk --update add \
     php7-redis \
-    --repository http://dl-4.alpinelinux.org/alpine/edge/testing
+    php7-zip \
+    php7-mcrypt
+
 
 # Composer
 RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
@@ -76,6 +77,9 @@ RUN rm -rf /var/www
 RUN mkdir -p /var/www
 WORKDIR /var/www
 COPY src/ /var/www/
+
+RUN rm -rf /var/cache/apk
+RUN rm -rf /root/.composer/cache
 
 EXPOSE 8080
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
