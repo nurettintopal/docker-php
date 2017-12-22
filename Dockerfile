@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine:3.7
 MAINTAINER Nurettin Topal <nurettintopal@gmail.com>
 
 #set timezone => Turkey - Istanbul
@@ -21,6 +21,7 @@ RUN apk --update add \
     nano \
     wget \
     gzip \
+    php7-pcntl \    
     php7-session \
     php7-gd \
     php7-mcrypt \
@@ -43,6 +44,7 @@ RUN apk --update add \
     php7-ctype \
     zlib \
     php7-zlib \
+    php7-ldap \
     bash \
     --repository http://nl.alpinelinux.org/alpine/edge/community/
 
@@ -76,6 +78,9 @@ RUN rm -rf /var/www
 RUN mkdir -p /var/www
 WORKDIR /var/www
 COPY src/ /var/www/
+
+RUN rm -rf /var/cache/apk
+RUN rm -rf /root/.composer/cache
 
 EXPOSE 8080
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
