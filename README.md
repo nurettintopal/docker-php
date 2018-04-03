@@ -1,6 +1,6 @@
-Docker PHP-FPM 7.1 & Nginx 1.12 on Alpine Linux
+Docker PHP-FPM 7.2 & Nginx 1.12 on Alpine Linux
 ==============================================
-[Alpine Linux](http://www.alpinelinux.org/), php 7.1, php7.1-fpm, nginx, git, composer for Docker
+[Alpine Linux](http://www.alpinelinux.org/), php 7.2, php7.2-fpm, nginx, git, composer for Docker
 
 
 # Usage
