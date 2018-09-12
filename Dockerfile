@@ -1,11 +1,5 @@
-FROM alpine:3.7
+FROM alpine:3.8
 MAINTAINER Nurettin Topal <nurettintopal@gmail.com>
-
-RUN echo 'http://dl-cdn.alpinelinux.org/alpine/v3.7/community' >> /etc/apk/repositories
-RUN echo 'http://dl-cdn.alpinelinux.org/alpine/v3.7/main' >> /etc/apk/repositories
-RUN echo 'http://nl.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories
-RUN echo 'http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories
-RUN echo 'http://nl.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories
 
 #set timezone => Turkey - Istanbul
 #https://wiki.alpinelinux.org/wiki/Setting_the_timezone
@@ -14,8 +8,6 @@ RUN cp /usr/share/zoneinfo/Turkey /etc/localtime
 RUN echo "Turkey" >  /etc/timezone
 RUN apk del tzdata
 RUN date
-
-RUN apk update && apk upgrade
 
 # Install packages
 RUN apk --update add \
@@ -26,9 +18,9 @@ RUN apk --update add \
     git \
     curl \
     unzip \
-    gzip \
     nano \
     wget \
+    gzip \
     php7-pcntl \
     php7-session \
     php7-gd \
@@ -52,10 +44,10 @@ RUN apk --update add \
     zlib \
     php7-zlib \
     php7-ldap \
-    bash
-
-RUN apk update && apk upgrade
-RUN apk --update add zip php7-redis
+    bash \
+    php7-redis \
+    php7-zip \
+    php7-mcrypt
 
 # Composer
 RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
