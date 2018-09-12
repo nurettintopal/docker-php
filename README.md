@@ -1,17 +1,60 @@
-Docker PHP-FPM 7.2 & Nginx 1.12 on Alpine Linux
+docker PHP on alpine linux
 ==============================================
-[Alpine Linux](http://www.alpinelinux.org/), php 7.2, php7.2-fpm, nginx, git, composer for Docker
 
+[Alpine Linux](https://www.alpinelinux.org/), [php](http://www.php.net/), [php-fpm](https://www.php-fpm.org/), [nginx](https://nginx.org/), [git](https://git-scm.com/), [composer](https://getcomposer.org/) for [Docker](https://www.docker.com/)
 
-# Usage
+# branches & versions
 
-docker build -t docker-php . && docker run -d -p 8080:8080 docker-php
+|  Branch | PHP | Note |
+|:-------|:---|:---|
+| master  | 7.2 | stable |
+| php-7.2 | 7.2 | stable |
+| php-7.1 | 7.1 | stable |
 
-docker exec -it XXXXXX sh
+# usage
 
-docker rm -f XXXXXX
+build image:
+```sh
+$ docker build -t docker-php .
+```
 
+run container:
+```sh
+$ docker run -d -p 8080:8080 docker-php
+```
+
+open a browser and go to:
+```sh
 http://localhost:8080/
+```
 
-# Detail
-=======
+connect to container with ssh:
+```sh
+$ docker exec -it XXXXXX sh
+```
+
+delete container:
+```sh
+$ docker rm -f XXXXXX
+```
+
+
+# usage with docker-swarm
+
+```note
+cooming soon...
+``` 
+
+
+# detail
+```note
+cooming soon...
+``` 
+
+# contributing
+```note
+cooming soon...
+``` 
+
+# license
+The docker-php is open-sourced software licensed
