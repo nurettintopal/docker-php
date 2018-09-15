@@ -1,4 +1,4 @@
-docker PHP on alpine linux
+docker PHP on alpine linux [![Docker Pulls](https://img.shields.io/docker/pulls/nurettintopal/docker-php.svg)](https://hub.docker.com/r/nurettintopal/docker-php/)
 ==============================================
 
 [Alpine Linux](https://www.alpinelinux.org/), [php](http://www.php.net/), [php-fpm](https://www.php-fpm.org/), [nginx](https://nginx.org/), [git](https://git-scm.com/), [composer](https://getcomposer.org/) for [Docker](https://www.docker.com/)
@@ -45,7 +45,7 @@ $ docker rm -f CONTAINER_ID
 cooming soon...
 ``` 
 
-## Supported PHP extensions
+## supported PHP extensions
 
  - php7-pcntl
  - php7-session
