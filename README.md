@@ -3,15 +3,16 @@ docker PHP on alpine linux
 
 [Alpine Linux](https://www.alpinelinux.org/), [php](http://www.php.net/), [php-fpm](https://www.php-fpm.org/), [nginx](https://nginx.org/), [git](https://git-scm.com/), [composer](https://getcomposer.org/) for [Docker](https://www.docker.com/)
 
-# branches & versions
+## branches & versions
 
 |  Branch | PHP | Note |
 |:-------|:---|:---|
 | master  | 7.2 | stable |
+| php-7.3 | 7.3 | coming soon |
 | php-7.2 | 7.2 | stable |
 | php-7.1 | 7.1 | stable |
 
-# usage
+## usage
 
 build image:
 ```sh
@@ -30,31 +31,51 @@ http://localhost:8080/
 
 connect to container with ssh:
 ```sh
-$ docker exec -it XXXXXX sh
+$ docker exec -it CONTAINER_ID sh
 ```
 
 delete container:
 ```sh
-$ docker rm -f XXXXXX
+$ docker rm -f CONTAINER_ID
 ```
 
-
-# usage with docker-swarm
+## usage with docker-compose
 
 ```note
 cooming soon...
 ``` 
 
+## Supported PHP extensions
 
-# detail
+ - php7-pcntl
+ - php7-session
+ - php7-gd
+ - php7-mbstring
+ - php7-json
+ - php7-xml
+ - php7-curl
+ - php7-mysqli
+ - php7-pdo
+ - php7-pdo_mysql
+ - php7-iconv
+ - php7-dom
+ - php7-opcache
+ - php7-phar
+ - php7-openssl
+ - php7-tokenizer
+ - php7-xmlwriter
+ - php7-simplexml
+ - php7-ctype
+ - php7-zlib
+ - php7-ldap
+ - php7-redis
+ - php7-zip
+ - php7-mcrypt 
+
+## contributing
 ```note
 cooming soon...
 ``` 
 
-# contributing
-```note
-cooming soon...
-``` 
-
-# license
+## license
 The docker-php is open-sourced software licensed
