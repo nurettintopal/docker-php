@@ -7,10 +7,11 @@ docker PHP on alpine linux [![Docker Pulls](https://img.shields.io/docker/pulls/
 
 |  Branch | PHP | Note |
 |:-------|:---|:---|
-| master  | 7.2 | stable |
-| php-7.3 | 7.3 | coming soon |
-| php-7.2 | 7.2 | stable |
-| php-7.1 | 7.1 | stable |
+| master  | 7.4 | work in progress |
+| php-7.4 | 7.4 | stable |
+| php-7.3 | 7.3 | stable |
+| php-7.2 | 7.2 | stable - not updating anymore|
+| php-7.1 | 7.1 | stable - not updating anymore|
 
 ## usage
 
@@ -78,4 +79,4 @@ cooming soon...
 ``` 
 
 ## license
-The docker-php is open-sourced software licensed
+docker-php is open-sourced software licensed under the [MIT license](LICENSE).

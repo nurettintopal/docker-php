@@ -41,13 +41,17 @@ RUN apk --update add \
     php7-xmlwriter \
     php7-simplexml \
     php7-ctype \
+    php7-fileinfo \
     zlib \
     php7-zlib \
     php7-ldap \
     bash \
     php7-redis \
     php7-zip \
+    php7-bcmath \
+    php7-mysqlnd \
     php7-mcrypt
+
 
 # Composer
 RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
