@@ -41,6 +41,7 @@ RUN apk --update add \
     php7-xmlwriter \
     php7-simplexml \
     php7-ctype \
+    php7-fileinfo \
     zlib \
     php7-zlib \
     php7-ldap \
