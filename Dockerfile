@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:3.10
 MAINTAINER Nurettin Topal <nurettintopal@gmail.com>
 
 #set timezone => Turkey - Istanbul
