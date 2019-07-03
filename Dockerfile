@@ -1,5 +1,5 @@
-FROM alpine:3.8
-MAINTAINER Nurettin Topal <nurettintopal@gmail.com>
+FROM alpine:3.13
+LABEL maintainer="Nurettin Topal <nurettintopal@gmail.com>"
 
 #set timezone => Turkey - Istanbul
 #https://wiki.alpinelinux.org/wiki/Setting_the_timezone
@@ -48,16 +48,11 @@ RUN apk --update add \
     bash \
     php7-redis \
     php7-zip \
-    php7-bcmath \
-    php7-mysqlnd \
     php7-mcrypt
 
 
 # Composer
 RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
-
-# prestissimo - composer parallel install plugin
-RUN composer global require "hirak/prestissimo:^0.3"
 
 # Configure nginx
 COPY config/nginx.conf /etc/nginx/nginx.conf

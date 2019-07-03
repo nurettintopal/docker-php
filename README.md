@@ -7,10 +7,12 @@ docker PHP on alpine linux [![Docker Pulls](https://img.shields.io/docker/pulls/
 
 |  Branch | PHP | Note |
 |:-------|:---|:---|
-| master  | 7.2 | stable |
-| php-7.3 | 7.3 | coming soon |
-| php-7.2 | 7.2 | stable |
-| php-7.1 | 7.1 | stable |
+| main  | 8.0 | stable |
+| php-8.0 | 8.0 | stable |
+| php-7.4 | 7.4 | stable |
+| php-7.3 | 7.3 | stable |
+| php-7.2 | 7.2 | stable - not updating anymore|
+| php-7.1 | 7.1 | stable - not updating anymore|
 
 ## usage
 
@@ -47,30 +49,25 @@ cooming soon...
 
 ## supported PHP extensions
 
- - php7-pcntl
- - php7-session
- - php7-gd
- - php7-mbstring
- - php7-json
- - php7-xml
- - php7-curl
- - php7-mysqli
- - php7-pdo
- - php7-pdo_mysql
- - php7-iconv
- - php7-dom
- - php7-opcache
- - php7-phar
- - php7-openssl
- - php7-tokenizer
- - php7-xmlwriter
- - php7-simplexml
- - php7-ctype
- - php7-zlib
- - php7-ldap
- - php7-redis
- - php7-zip
- - php7-mcrypt 
+ - php-pcntl
+ - php-session
+ - php-mbstring
+ - php-json
+ - php-xml
+ - php-curl
+ - php-mysqli
+ - php-pdo
+ - php-pdo_mysql
+ - php-iconv
+ - php-dom
+ - php-phar
+ - php-openssl
+ - php-tokenizer
+ - php-xmlwriter
+ - php-simplexml
+ - php-ctype
+ - php-zlib
+ - php-redis
 
 ## contributing
 ```note
@@ -78,4 +75,4 @@ cooming soon...
 ``` 
 
 ## license
-The docker-php is open-sourced software licensed
+docker-php is open-sourced software licensed under the [MIT license](LICENSE).
