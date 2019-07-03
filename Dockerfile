@@ -22,6 +22,7 @@ RUN apk --update add \
     wget \
     gzip \
     php7-pcntl \
+    php7-posix \
     php7-session \
     php7-gd \
     php7-mbstring \
