@@ -1,18 +1,8 @@
-FROM alpine:3.10
-MAINTAINER Nurettin Topal <nurettintopal@gmail.com>
-
-#set timezone => Turkey - Istanbul
-#https://wiki.alpinelinux.org/wiki/Setting_the_timezone
-RUN apk --update add tzdata
-RUN cp /usr/share/zoneinfo/Turkey /etc/localtime
-RUN echo "Turkey" >  /etc/timezone
-RUN apk del tzdata
-RUN date
+FROM php:7.4-fpm-alpine3.11
+LABEL maintainer="Nurettin Topal <nurettintopal@gmail.com>"
 
 # Install packages
 RUN apk --update add \
-    php7 \
-    php7-fpm \
     nginx \
     supervisor \
     git \
@@ -21,37 +11,38 @@ RUN apk --update add \
     nano \
     wget \
     gzip \
-    php7-pcntl \
+    openssl \
+    zlib \
+    bash \        
+    php7-posix \
     php7-session \
-    php7-gd \
     php7-mbstring \
     php7-json \
     php7-xml \
     php7-curl \
-    php7-mysqli \
-    php7-pdo \
-    php7-pdo_mysql \
     php7-iconv \
     php7-dom \
-    php7-opcache \
     php7-phar \
-    openssl \
     php7-openssl \
     php7-tokenizer \
     php7-xmlwriter \
     php7-simplexml \
     php7-ctype \
     php7-fileinfo \
-    zlib \
     php7-zlib \
-    php7-ldap \
-    bash \
-    php7-redis \
-    php7-zip \
     php7-bcmath \
-    php7-mysqlnd \
-    php7-mcrypt
+    php7-mysqlnd
 
+ENV REDIS_VERSION 5.2.1
+RUN curl -L -o /tmp/redis.tar.gz https://github.com/phpredis/phpredis/archive/$REDIS_VERSION.tar.gz \
+    && tar xfz /tmp/redis.tar.gz \
+    && rm -r /tmp/redis.tar.gz \
+    && mkdir -p /usr/src/php/ext \
+    && mv phpredis-* /usr/src/php/ext/redis
+RUN docker-php-ext-install redis
+
+RUN docker-php-ext-install pdo mysqli pdo_mysql 
+RUN docker-php-ext-install pcntl
 
 # Composer
 RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
