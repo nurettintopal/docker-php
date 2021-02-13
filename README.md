@@ -7,7 +7,8 @@ docker PHP on alpine linux [![Docker Pulls](https://img.shields.io/docker/pulls/
 
 |  Branch | PHP | Note |
 |:-------|:---|:---|
-| master  | 7.4 | stable |
+| main  | 8.0 | stable |
+| php-8.0 | 8.0 | stable |
 | php-7.4 | 7.4 | stable |
 | php-7.3 | 7.3 | stable |
 | php-7.2 | 7.2 | stable - not updating anymore|
@@ -48,25 +49,25 @@ cooming soon...
 
 ## supported PHP extensions
 
- - php7-pcntl
- - php7-session
- - php7-mbstring
- - php7-json
- - php7-xml
- - php7-curl
- - php7-mysqli
- - php7-pdo
- - php7-pdo_mysql
- - php7-iconv
- - php7-dom
- - php7-phar
- - php7-openssl
- - php7-tokenizer
- - php7-xmlwriter
- - php7-simplexml
- - php7-ctype
- - php7-zlib
- - php7-redis
+ - php-pcntl
+ - php-session
+ - php-mbstring
+ - php-json
+ - php-xml
+ - php-curl
+ - php-mysqli
+ - php-pdo
+ - php-pdo_mysql
+ - php-iconv
+ - php-dom
+ - php-phar
+ - php-openssl
+ - php-tokenizer
+ - php-xmlwriter
+ - php-simplexml
+ - php-ctype
+ - php-zlib
+ - php-redis
 
 ## contributing
 ```note
