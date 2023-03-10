@@ -7,10 +7,11 @@ docker PHP on alpine linux [![Docker Pulls](https://img.shields.io/docker/pulls/
 
 |  Branch | PHP | Note |
 |:-------|:---|:---|
-| main  | 8.0 | stable |
-| php-8.0 | 8.0 | stable |
-| php-7.4 | 7.4 | stable |
-| php-7.3 | 7.3 | stable |
+| main    | 8.1 | stable |
+| php-8.1 | 8.1 | stable |
+| php-8.0 | 8.0 | stable - not updating anymore|
+| php-7.4 | 7.4 | stable - not updating anymore|
+| php-7.3 | 7.3 | stable - not updating anymore|
 | php-7.2 | 7.2 | stable - not updating anymore|
 | php-7.1 | 7.1 | stable - not updating anymore|
 

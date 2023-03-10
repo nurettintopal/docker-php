@@ -1,9 +1,11 @@
-FROM alpine:3.14
+FROM alpine:3.17
 LABEL maintainer="Nurettin Topal <nurettintopal@gmail.com>"
 
-# Install php8
-RUN apk --update add php8
-RUN ln -s /usr/bin/php8 /usr/bin/php
+# Install php81
+RUN apk --update add php81
+#RUN ls /usr/bin
+#RUN php -v
+#RUN ln -s /usr/bin/php8 /usr/bin/php
 
 # Install packages
 RUN apk --update add \
@@ -18,41 +20,41 @@ RUN apk --update add \
     openssl \
     zlib \
     bash \        
-    php8-fpm \
-    php8-posix \
-    php8-session \
-    php8-mbstring \
-    php8-json \
-    php8-xml \
-    php8-curl \
-    php8-iconv \
-    php8-dom \
-    php8-phar \
-    php8-openssl \
-    php8-tokenizer \
-    php8-xmlwriter \
-    php8-simplexml \
-    php8-ctype \
-    php8-fileinfo \
-    php8-zlib \
-    php8-bcmath \
-    php8-mysqlnd \
+    php81-fpm \
+    php81-posix \
+    php81-session \
+    php81-mbstring \
+    php81-json \
+    php81-xml \
+    php81-curl \
+    php81-iconv \
+    php81-dom \
+    php81-phar \
+    php81-openssl \
+    php81-tokenizer \
+    php81-xmlwriter \
+    php81-simplexml \
+    php81-ctype \
+    php81-fileinfo \
+    php81-zlib \
+    php81-bcmath \
+    php81-mysqlnd \
     redis \
-    php8-redis \
-    php8-pdo \
-    php8-mysqli \
-    php8-pdo_mysql \
-    php8-pcntl
+    php81-redis \
+    php81-pdo \
+    php81-mysqli \
+    php81-pdo_mysql \
+    php81-pcntl
 
 # Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer --version=2.0.8
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer --version=2.5.4
 
 # Configure nginx
 COPY config/nginx.conf /etc/nginx/nginx.conf
 
 # Configure PHP-FPM
-COPY config/fpm-pool.conf /etc/php8/php-fpm.d/docker_custom.conf
-COPY config/php.ini /etc/php8/conf.d/docker_custom.ini
+COPY config/fpm-pool.conf /etc/php81/php-fpm.d/docker_custom.conf
+COPY config/php.ini /etc/php81/conf.d/docker_custom.ini
 
 # copy default nginx conf
 COPY config/default-nginx /etc/nginx/sites-available/default
