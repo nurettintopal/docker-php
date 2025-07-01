@@ -1,4 +1,4 @@
-FROM alpine:3.21.0
+FROM alpine:3.22.0
 LABEL maintainer="Nurettin Topal <nurettintopal@gmail.com>"
 
 # Install php84
@@ -43,14 +43,16 @@ RUN apk --update add \
     php84-redis \
     php84-pdo \
     php84-mysqli \
+    php84-pgsql \
     php84-pdo_mysql \
+    php84-pdo_pgsql \
     php84-pcntl
 
 
 RUN ln -s /usr/bin/php84 /usr/bin/php
 
 # Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer --version=2.8.3
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer --version=2.8.9
 
 # Configure nginx
 COPY config/nginx.conf /etc/nginx/nginx.conf
