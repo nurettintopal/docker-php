@@ -1,8 +1,8 @@
-FROM alpine:3.22.0
+FROM alpine:3.23
 LABEL maintainer="Nurettin Topal <nurettintopal@gmail.com>"
 
-# Install php84
-RUN apk --update add php84
+# Install php85
+RUN apk --update add php85
 #RUN ls /usr/bin
 #RUN php -v
 #RUN ln -s /usr/bin/php8 /usr/bin/php
@@ -20,46 +20,46 @@ RUN apk --update add \
     openssl \
     zlib \
     bash \        
-    php84-fpm \
-    php84-posix \
-    php84-session \
-    php84-mbstring \
-    php84-json \
-    php84-xml \
-    php84-curl \
-    php84-iconv \
-    php84-dom \
-    php84-phar \
-    php84-openssl \
-    php84-tokenizer \
-    php84-xmlwriter \
-    php84-simplexml \
-    php84-ctype \
-    php84-fileinfo \
-    php84-zlib \
-    php84-bcmath \
-    php84-mysqlnd \
+    php85-fpm \
+    php85-posix \
+    php85-session \
+    php85-mbstring \
+    php85-json \
+    php85-xml \
+    php85-curl \
+    php85-iconv \
+    php85-dom \
+    php85-phar \
+    php85-openssl \
+    php85-tokenizer \
+    php85-xmlwriter \
+    php85-simplexml \
+    php85-ctype \
+    php85-fileinfo \
+    php85-zlib \
+    php85-bcmath \
+    php85-mysqlnd \
     redis \
-    php84-redis \
-    php84-pdo \
-    php84-mysqli \
-    php84-pgsql \
-    php84-pdo_mysql \
-    php84-pdo_pgsql \
-    php84-pcntl
+    php85-redis \
+    php85-pdo \
+    php85-mysqli \
+    php85-pgsql \
+    php85-pdo_mysql \
+    php85-pdo_pgsql \
+    php85-pcntl
 
 
-RUN ln -s /usr/bin/php84 /usr/bin/php
+RUN ln -s /usr/bin/php85 /usr/bin/php
 
 # Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer --version=2.8.9
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer --version=2.9.2
 
 # Configure nginx
 COPY config/nginx.conf /etc/nginx/nginx.conf
 
 # Configure PHP-FPM
-COPY config/fpm-pool.conf /etc/php84/php-fpm.d/docker_custom.conf
-COPY config/php.ini /etc/php84/conf.d/docker_custom.ini
+COPY config/fpm-pool.conf /etc/php85/php-fpm.d/docker_custom.conf
+COPY config/php.ini /etc/php85/conf.d/docker_custom.ini
 
 # copy default nginx conf
 COPY config/default-nginx /etc/nginx/sites-available/default
